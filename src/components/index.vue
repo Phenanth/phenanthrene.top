@@ -6,6 +6,7 @@
 			<div class="nav-square"><i class="fa fa-cubes fa-2x" aria-hidden="true"></i></div>
 			<div class="nav-options">
 				<div class="nav-option" v-on:click="goTo('/home')" v-bind:class="{ active : isRouteHome }">Home-page</div>
+				<div class="nav-option" v-on:click="goTo('/repository')" v-bind:class="{ active : isRouteRepository }">Repository</div>
 				<div class="nav-option" v-on:click="goTo('/about')" v-bind:class="{ active : isRouteAbout }">About</div>
 			</div>
 			<div class="nav-square fix-to-bottom" onclick="window.open('https://github.com/Phenanth')"><i class="fa fa-git fa-lg" aria-hidden="true"></i></div>
@@ -43,6 +44,15 @@ export default {
 				return false
 			}
 		},
+		isRouteRepository: function () {
+			let routerCheck = new RegExp('/repository', 'g')
+			let arr = routerCheck.exec(this.$route.path)
+			if (arr) {
+				return true
+			} else {
+				return false
+			}
+		},
 		isRouteAbout: function () {
 			let routerCheck = new RegExp('/about', 'g')
 			let arr = routerCheck.exec(this.$route.path)
@@ -69,6 +79,7 @@ export default {
 <style>
 
 .index-wrapper {
+	color: black;
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -82,6 +93,7 @@ export default {
 	background-color: black;
 	background: linear-gradient(45deg, black 25%, rgb(135, 216, 205) 0, rgb(135, 216, 205) 50%, black 0, black 75%, rgb(135, 216, 205) 0); 
 	background-size: 30px 30px;
+
 }
 
 .nav-square {
@@ -89,11 +101,14 @@ export default {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	color: white;
+	color: black;
 	font-weight: bold;
 	background-color: rgb(135, 216, 205);
 	width: calc(100%);
 	height: 50px;
+}
+.nav-square:hover {
+	color: white;
 }
 .fix-to-bottom {
 	width: 120px;

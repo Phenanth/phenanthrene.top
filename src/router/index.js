@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/index'
 import Homepage from '@/components/homepage/homepage'
+import Repository from '@/components/repository/repository'
 import About from '@/components/others/about'
 import LogAdmin from '@/components/others/logAdmin'
 
@@ -19,6 +20,10 @@ export default new Router({
       		path: '/home',
       		component: Homepage
       	},
+        {
+          path: '/repository',
+          component: Repository
+        },
       	{
       		path: '/about',
       		component: About
