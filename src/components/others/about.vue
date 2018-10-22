@@ -2,7 +2,7 @@
 <template>
 	<div class="about-wrapper">
 
-		<div class="about-title">
+		<div class="about-header">
 			<span>phenanthrene.top</span>
 		</div>
 
@@ -52,7 +52,7 @@
 	padding: 30px;
 }
 
-.about-title {
+.about-header {
 	color: black;
 	font-weight: bold;
 	font-size: 50px;

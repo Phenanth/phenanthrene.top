@@ -15,6 +15,11 @@
 			<div class="index-header">
 				<div class="header-options">
 					<div class="header-option" v-on:click="goTo('/logAdmin')" v-bind:class="{ active : isRouteAdmin }">Admin</div>
+					<div class="header-option hd-toggle-bar">Lang <i class="fa fa-arrow-circle-down" aria-hidden="true"></i> 
+						<div class="hd-toggle-bar-option">English</div>
+						<div class="hd-toggle-bar-option">Chinese</div>
+						<div class="hd-toggle-bar-option">Japanese</div>
+					</div>
 				</div>
 			</div>
 			<div class="index-content">
@@ -77,6 +82,13 @@ export default {
 </script>
 
 <style>
+
+div, .btn{
+	transition: color .4s;
+	-moz-transition: color .4s;	/* Firefox 4 */
+	-webkit-transition: color .4s;	/* Safari 和 Chrome */
+	-o-transition: color .4s;	/* Opera */
+}
 
 .index-wrapper {
 	color: black;
@@ -156,10 +168,32 @@ export default {
 	height: 40px;
 	width: 80px;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
+
 	color: rgb(135, 216, 205);
 	font-weight: bold;
+}
+
+.hd-toggle-bar {
+	position: relative; /* 作用：保持鼠标下移下拉菜单依然出现 */
+	display: inline-block;
+	line-height: 40px;
+	text-align: center;
+}
+
+.hd-toggle-bar-option {
+	display: none;
+	background-color: black;
+	color: rgb(135, 216, 205);
+}
+
+.hd-toggle-bar-option:hover {
+	color: white;
+}
+
+.hd-toggle-bar:hover .hd-toggle-bar-option {
+	display: block;
 }
 
 .active {

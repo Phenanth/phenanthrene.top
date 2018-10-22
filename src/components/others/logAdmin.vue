@@ -13,7 +13,7 @@
 				</div>
 				<div class="login-input form-group">
 					<label for="input-pw"><i class="fa fa-unlock fa-lg" aira-hiddin="ture"></i></label>
-					<input class="form-control" name="first" type="text">
+					<input class="form-control" name="first" type="password">
 				</div>
 				<button type="button" class="btn btn-login">Login</button>
 			</form>
