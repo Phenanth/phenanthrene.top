@@ -3,7 +3,7 @@
 	<div class="about-wrapper">
 
 		<div class="about-header">
-			<span>phenanthrene.top</span>
+			<span>About phenanthrene.top</span>
 		</div>
 
 		<div class="about-contents">
@@ -11,7 +11,7 @@
 				<i class="fa fa-tag" aria-hidden="true"></i>
 				<div>
 					<p>Wanna see some of my posts?</p>
-					<p class="about-underline">Check the 'Home-page' tab.</p>
+					<p class="about-underline">Check the 'Posts' tab.</p>
 				</div>
 			</div>
 			<div class="about-content">
@@ -42,15 +42,6 @@
 </template>
 <script></script>
 <style>
-.about-wrapper {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: flex-start;
-	padding: 30px;
-}
 
 .about-header {
 	color: black;

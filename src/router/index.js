@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/index'
-import Homepage from '@/components/homepage/homepage'
+import Posts from '@/components/homepage/posts'
+import Post from '@/components/homepage/post'
 import Repository from '@/components/repository/repository'
 import About from '@/components/others/about'
 import LogAdmin from '@/components/others/logAdmin'
@@ -17,8 +18,8 @@ export default new Router({
 			redirect: '/about',
       children: [
       	{
-      		path: '/home',
-      		component: Homepage
+      		path: '/posts',
+      		component: Posts
       	},
         {
           path: '/repository',
@@ -31,7 +32,18 @@ export default new Router({
       	{
       		path: '/logAdmin',
       		component: LogAdmin
-      	}
+      	},
+        {
+          path: '/post',
+          name: 'Post',
+          component: Post,
+          redirect: '/post-item/:note',
+          children: [
+            {
+              path: '/post-item/:note'
+            }
+          ]
+        }
       ]
     }
   ]

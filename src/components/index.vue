@@ -5,7 +5,7 @@
 		<div class="index-nav">
 			<div class="nav-square"><i class="fa fa-cubes fa-2x" aria-hidden="true"></i></div>
 			<div class="nav-options">
-				<div class="nav-option" v-on:click="goTo('/home')" v-bind:class="{ active : isRouteHome }">Home-page</div>
+				<div class="nav-option" v-on:click="goTo('/posts')" v-bind:class="{ active : isRouteHome }">Posts</div>
 				<div class="nav-option" v-on:click="goTo('/repository')" v-bind:class="{ active : isRouteRepository }">Repository</div>
 				<div class="nav-option" v-on:click="goTo('/about')" v-bind:class="{ active : isRouteAbout }">About</div>
 			</div>
@@ -96,6 +96,16 @@ div, .btn{
 	height: 100%;
 	display: flex;
 	flex-direction: row;
+}
+
+.home-wrapper, .reposi-wrapper, .about-wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding: 30px;
 }
 
 .index-nav {
