@@ -111,7 +111,7 @@ div, .btn{
 .index-nav {
 	width: 120px;
 	height: 100%;
-	border-right: 4px solid rgb(135, 216, 205);
+	/*border-right: 4px solid rgb(135, 216, 205);*/
 	background-color: black;
 	background: linear-gradient(45deg, black 25%, rgb(135, 216, 205) 0, rgb(135, 216, 205) 50%, black 0, black 75%, rgb(135, 216, 205) 0); 
 	background-size: 30px 30px;

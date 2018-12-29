@@ -17,6 +17,14 @@
 			</div>
 			<div class="row">
 				<div class="reposi-middle-box col-sm-1"><i class="fa fa-long-arrow-right fa-lg" aria-hidden="true"></i></div>
+				<div class="reposi-content-box col-sm-1" v-on:click="goTo('/library/')">Library-System</div>
+			</div>
+			<div class="row">
+				<div class="reposi-middle-box col-sm-1"><i class="fa fa-long-arrow-right fa-lg" aria-hidden="true"></i></div>
+				<div class="reposi-content-box col-sm-1" v-on:click="goTo('/GA-Login/')">GA-Login</div>
+			</div>
+			<div class="row">
+				<div class="reposi-middle-box col-sm-1"><i class="fa fa-long-arrow-right fa-lg" aria-hidden="true"></i></div>
 				<div class="reposi-content-box col-sm-1" onclick="window.open('https://github.com/Phenanth/Hitokoto')">Hitokoto</div>
 			</div>
 			<div class="row">
@@ -28,7 +36,16 @@
 	</div>
 </template>
 
-<script></script>
+<script>
+	
+export default {
+	methods: {
+		goTo: function (path) {
+			this.$router.push(path)
+		}
+	}
+}
+</script>
 
 <style>
 

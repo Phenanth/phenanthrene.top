@@ -62,14 +62,14 @@
 	align-items: flex-start;
 	width: 300px;
 	margin: 30px;
+	color: black;
+	background-color: rgb(135, 216, 205);
 }
 .login-input:hover {
 	color: white;
 }
 
 .form-control {
-	color: black;
-	background-color: rgb(135, 216, 205);
 }
 .form-control:focus {
 	border-color: rgb(135, 216, 205);
