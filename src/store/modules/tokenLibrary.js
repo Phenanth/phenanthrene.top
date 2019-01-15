@@ -23,7 +23,7 @@ const actions = {
 const mutations = {
 	STORETOKENLIBRARY: function (state, data) {
 		localStorage.setItem('tokenLibrary', data)
-		state.token = data
+		state.tokenLibrary = data
 	},
 	REMOVETOKENLIBRARY: function (state) {
 		localStorage.removeItem('tokenLibrary')

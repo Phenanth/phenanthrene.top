@@ -16,13 +16,13 @@ body {
   top: 0px;
 }
 #app {
-  height: 100vh;
   width: 100%;
-  min-width: 576px;
+  overflow-x: hidden;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: rgb(135, 216, 205);
 }
 </style>

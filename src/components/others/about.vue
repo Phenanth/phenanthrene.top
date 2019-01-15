@@ -3,7 +3,7 @@
 	<div class="about-wrapper">
 
 		<div class="about-header">
-			<span>About phenanthrene.top</span>
+			<p>About</p>
 		</div>
 
 		<div class="about-contents">
@@ -23,7 +23,7 @@
 			</div>
 
 			<div class="about-content">
-				<i class="fa fa-git" aria-hidden="true"></i>
+				<i class="fab fa-git fa-lg"></i>
 				<div>
 					<p class="about-underline">Also, click the 'git' icon to see my github page.</p>
 				</div>
@@ -50,7 +50,7 @@
 }
 
 .about-contents {
-	margin-top: 30px;
+	margin-top: 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -78,6 +78,12 @@
 
 .about-underline {
 	background: linear-gradient(90deg, rgb(135, 216, 205) 66%, transparent 0) repeat-x; 
+	background-size: .8em 1px; 
+	background-position: .1em 1.2em;
+}
+
+.about-underline-white {
+	background: linear-gradient(90deg, black 66%, transparent 0) repeat-x; 
 	background-size: .8em 1px; 
 	background-position: .1em 1.2em;
 }

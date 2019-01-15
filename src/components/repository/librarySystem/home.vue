@@ -74,35 +74,6 @@
 		</div>
 
 	</div>
-<!-- <div class="home">
-	<div class="ctn-home row">
-		<div class="jumbotron">
-			<h1>Hello, world!</h1>
-			<p>...</p>
-		</div>
-		<div class="sections">
-			<div class="section col-sm-6 col-md-3">
-				<a href="#" class="section thumbnail" v-on:click="goTo('/module/borrow/tips')">
-					借书
-				</a>
-			</div>
-			<div class="section col-sm-6 col-md-3">
-				<a href="#" class="section thumbnail" v-on:click="goTo('/module/return/tips')"">
-					还书
-				</a>
-			</div>
-			<div class="section col-sm-6 col-md-3">
-				<a href="#" class="section thumbnail" v-on:click="goTo('/module/fine/tips')">
-					超期罚款
-				</a>
-			</div>
-		</div>
-		<div class="ft" >
-						<img width="32px" class="git" onclick="window.open('https://github.com/Phenanth/GA-Login');" src="./static/svg/github5.svg"/>
-		</div>
-		
-	</div>
-</div> -->
 </template>
 
 <script>
@@ -127,29 +98,12 @@ export default {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	width: 10	0%;
+	width: 80%;
 	height: calc(100% - 40px * 2);
 	margin-top: 30px;
 	margin-left: 10%;
 	margin-right: 10%;
 }
-
-/* 注释掉的原来的界面 */
-
-/* .jumbotron {
-	width: 100%;
-}
-
-.sections {
-	display: flex;
-	width: 80%;
-	justify-content: space-around;
-}
-
-.section {
-	width: 250px;
-	height: 200px;
-} */
 
 .head-home {
 	padding: 8px;

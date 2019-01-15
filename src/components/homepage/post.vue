@@ -28,6 +28,12 @@ export default {
 }
 </script>
 <style>
+
+.post-wrapper {
+	margin-top: 40px;
+	margin-left: 120px;
+}
+
 .post-header {
 	display: flex;
 

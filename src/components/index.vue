@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 
 <template>
-	<div class="index-wrapper">
+	<div class="index-wrapper container-fluid">
 		<div class="index-nav">
 			<div class="nav-square"><i class="fa fa-cubes fa-2x" aria-hidden="true"></i></div>
 			<div class="nav-options">
-				<div class="nav-option" v-on:click="goTo('/posts')" v-bind:class="{ active : isRouteHome }">Posts</div>
+				<div class="nav-option" v-on:click="goTo('/posts')" v-bind:class="{ active : isRoutePost }">Posts</div>
 				<div class="nav-option" v-on:click="goTo('/repository')" v-bind:class="{ active : isRouteRepository }">Repository</div>
 				<div class="nav-option" v-on:click="goTo('/about')" v-bind:class="{ active : isRouteAbout }">About</div>
 			</div>
-			<div class="nav-square fix-to-bottom" onclick="window.open('https://github.com/Phenanth')"><i class="fa fa-git fa-lg" aria-hidden="true"></i></div>
+			<div class="nav-square" onclick="window.open('https://github.com/Phenanth')"><i class="fab fa-git fa-lg"></i></div>
 		</div>
 		<div class="index-right">
 			<div class="index-header">
@@ -40,8 +40,8 @@ export default {
 		}
 	},
 	computed: {
-		isRouteHome: function () {
-			let routerCheck = new RegExp('/home', 'g')
+		isRoutePost: function () {
+			let routerCheck = new RegExp('/posts', 'g')
 			let arr = routerCheck.exec(this.$route.path)
 			if (arr) {
 				return true
@@ -68,9 +68,11 @@ export default {
 			}
 		},
 		isRouteAdmin: function () {
-			let routerCheck = new RegExp('/logAdmin', 'g')
-			let arr = routerCheck.exec(this.$route.path)
-			if (arr) {
+			let routerCheck1 = new RegExp('/logAdmin', 'g')
+			let routerCheck2 = new RegExp('/infoAdmin', 'g')
+			let arr1 = routerCheck1.exec(this.$route.path)
+			let arr2  = routerCheck2.exec(this.$route.path)
+			if (arr1 || arr2) {
 				return true
 			} else {
 				return false
@@ -83,11 +85,16 @@ export default {
 
 <style>
 
-div, .btn{
+div, .btn, .btn-hover {
 	transition: color .4s;
 	-moz-transition: color .4s;	/* Firefox 4 */
 	-webkit-transition: color .4s;	/* Safari 和 Chrome */
 	-o-transition: color .4s;	/* Opera */
+}
+
+.container-fluid {
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 .index-wrapper {
@@ -98,9 +105,11 @@ div, .btn{
 	flex-direction: row;
 }
 
-.home-wrapper, .reposi-wrapper, .about-wrapper {
+.home-wrapper, .reposi-wrapper, .about-wrapper, .login-wrapper, .info-wrapper {
 	width: 100%;
 	height: 100%;
+	margin-left: 120px;
+	margin-top: 40px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -110,7 +119,13 @@ div, .btn{
 
 .index-nav {
 	width: 120px;
-	height: 100%;
+	height: 100vh;
+	display: flex;
+	position: fixed;
+	left: 0px;
+	z-index: 100;
+	flex-direction: column;
+	justify-content: space-between;
 	/*border-right: 4px solid rgb(135, 216, 205);*/
 	background-color: black;
 	background: linear-gradient(45deg, black 25%, rgb(135, 216, 205) 0, rgb(135, 216, 205) 50%, black 0, black 75%, rgb(135, 216, 205) 0); 
@@ -127,7 +142,7 @@ div, .btn{
 	font-weight: bold;
 	background-color: rgb(135, 216, 205);
 	width: calc(100%);
-	height: 50px;
+	height: 40px;
 }
 .nav-square:hover {
 	color: white;
@@ -146,7 +161,7 @@ div, .btn{
 	align-items: center;
 	height: 40px;
 	font-weight: bold;
-	margin-top: 15px;
+	margin-top: 5px;
 	color: rgb(135, 216, 205);
 	background-color: black;
 	padding: .8em;
@@ -167,10 +182,16 @@ div, .btn{
 
 .index-header {
 	height: 40px;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	width: calc(100vw - 120px);
+	z-index: 100;
 	background-color: black;
 }
 .header-options {
 	display: flex;
+
 	flex-direction: row-reverse;
 
 }
@@ -221,6 +242,12 @@ div, .btn{
 
 .index-footer {
 	height: 40px;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	width: calc(100% - 120px);
+
+	z-index: 100;
 	background-color: black;
 
 }

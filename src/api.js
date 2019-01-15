@@ -61,6 +61,10 @@ export default {
 
 	libraryChangePassword ( data ) {
 		return instance.post('/api/library/changePassword', data)
+	},
+
+	blogDoVerify ( data ) {
+		return instance.post('/api/blog/verify', data)
 	}
 
 }

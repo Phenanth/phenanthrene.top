@@ -8,6 +8,7 @@ import Post from '@/components/homepage/post'
 import Repository from '@/components/repository/repository'
 import About from '@/components/others/about'
 import LogAdmin from '@/components/others/logAdmin'
+import InfoAdmin from '@/components/others/InfoAdmin'
 
 import LibraryIndex from '@/components/repository/librarySystem/index'
 import LibraryHome from '@/components/repository/librarySystem/home'
@@ -51,8 +52,28 @@ export default new Router({
       	},
       	{
       		path: '/logAdmin',
-      		component: LogAdmin
+      		component: LogAdmin,
+          beforeEnter: (to, from, next) => {
+            let token = JSON.parse(store.getters.showTokenBlogState)
+            if (token) {
+              next('/infoAdmin')
+            } else {
+              next()
+            }
+          }
       	},
+        {
+          path: '/infoAdmin',
+          component: InfoAdmin,
+          beforeEnter: (to, from, next) => {
+            let token = JSON.parse(store.getters.showTokenBlogState)
+            if (token) {
+              next()
+            } else {
+              next('/logAdmin')
+            }
+          }
+        },
         {
           path: '/post',
           name: 'Post',
@@ -60,7 +81,16 @@ export default new Router({
           redirect: '/post-item/:note',
           children: [
             {
-              path: '/post-item/:note'
+              path: '/post-item/:note',
+              beforeEnter: (to, from, next) => {
+                if (to.path == '/post-item/WRD') {
+                  let token = store.getters.showTokenBlogState
+                  if (!token) {
+                    next('/logAdmin')
+                  }
+                }
+                next()
+              }
             }
           ]
         },

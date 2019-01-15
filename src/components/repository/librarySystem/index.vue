@@ -56,8 +56,8 @@ export default {
 	
 html, body {
 	overflow-x: hidden;
-	overflow-y: hidden;
  	height: 100%;
+ 	width: 100%;
 }
 
 .index, .home, .module {
@@ -67,6 +67,7 @@ html, body {
 	flex-direction: column;
 	justify-content: center;
 	align-self: center;
+	background-color: white;
 }
 
 .hd {

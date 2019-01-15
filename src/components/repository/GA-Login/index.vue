@@ -35,7 +35,6 @@ export default {
 <style>
 
 html, body {
-	min-width: 992px;
 	margin: 0px;
 	overflow-x: hidden;
  	background-color: white; 

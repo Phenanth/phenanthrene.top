@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 
 <template>
-	<div class="home-wrapper">
+	<div class="home-wrapper container-fluid">
 		
 		<div class="home-header">
 			<span>Posts</span>
 		</div>
 
-		<div class="home-content">
-			<div class="home-content-boxes">
-				<div class="home-content-box" v-on:click="goTo('/post-item/SCL')"><i class="fa fa-graduation-cap fa-lg" aria-hidden="true"></i>SCL</div>
-				<div class="home-content-box" v-on:click="goTo('/post-item/WRK')"><i class="fa fa-users fa-lg" aria-hidden="true"></i>WRK</div>
-				<div class="home-content-box" v-on:click="goTo('/post-item/FUN')"><i class="fa fa-star fa-lg" aria-hidden="true"></i>FUN</div>
-				<div class="home-content-box" v-on:click="goTo('/post-item/SCL')"WRD><i class="fa fa-low-vision fa-lg" aria-hidden="true"></i>WRD</div>
+		<div class="home-content row">
+			<div class="home-content-boxes col-md-8 col-sm-8">
+				<div class="home-content-box col-md-2 col-sm-2" v-on:click="goTo('/post-item/SCL')"><i class="fas fa-graduation-cap"></i>SCL</div>
+				<div class="home-content-box col-md-2 col-sm-2" v-on:click="goTo('/post-item/WRK')"><i class="fas fa-code"></i>WRK</div>
+				<div class="home-content-box col-md-2 col-sm-2" v-on:click="goTo('/post-item/FUN')"><i class="fas fa-charging-station"></i>FUN</div>
+				<div class="home-content-box col-md-2 col-sm-2" v-on:click="goTo('/post-item/WRD')" v-if="isAdmin"><i class="fas fa-heartbeat"></i>WRD</div>
 			</div>
 		</div>
 
@@ -21,11 +21,17 @@
 
 <script>
 import router from '../../router'
+import store from '../../store'
 export default {
 	name: 'homepage',
 	methods: {
 		goTo: function (route) {
 			router.push(route);
+		}
+	},
+	computed: {
+		isAdmin: function () {
+			return JSON.parse(store.getters.showTokenBlogState) != null
 		}
 	}
 }
@@ -47,7 +53,7 @@ export default {
 .home-content-boxes {
 	display: flex;
 	flex-wrap: wrap;
-	margin-top: 50px;
+	margin-top: 30px;
 	justify-content: space-between;
 }
 
@@ -55,10 +61,8 @@ export default {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
-	width: 150px;
-	height: 150px;
-	padding: 45px;
+	justify-content: center;
+	height: 17vh;
 	font-weight: bold;
 	margin-bottom: 20px;
 	color: rgb(135, 216, 205);

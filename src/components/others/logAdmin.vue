@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 
 <template>
-	<div class="login-wrapper">
-		<span>Don't waste your time if you're not an ADMIN.</span>
-		<span>There is no register page.</span>
+	<div class="login-wrapper container-fluid">
+		<div class="login-header">
+			<span>Login</span>
+		</div>
 		<div class="login-content">
-			<form>
-				<div class="login-input form-group">
+			<form class="col-md-3 col-sm-3">
+				<div class="input-input form-group">
+					<label>Login Code</label>
+					<input id="verifyText" type="text" class="form-control" v-model="verifyCode" placeholder="Input login code (Google Authenticator)">
+				</div>
+				<!-- <div class="login-input form-group">
 					<label for="input-user"><i class="fa fa-user fa-lg" aira-hiddin="ture"></i></label>
 					
 					<input class="form-control" name="first" type="text">
@@ -14,8 +19,8 @@
 				<div class="login-input form-group">
 					<label for="input-pw"><i class="fa fa-unlock fa-lg" aira-hiddin="ture"></i></label>
 					<input class="form-control" name="first" type="password">
-				</div>
-				<button type="button" class="btn btn-login">Login</button>
+				</div> -->
+				<button type="button" class="btn btn-login" v-on:click="doBlogVerify()">Verify Identity</button>
 			</form>
 		</div>
 
@@ -24,17 +29,55 @@
 	</div>
 </template>
 
-<script></script>
+<script>
+import api from '../../api.js'
+import store from '../../store'
+export default {
+	name: 'BlogLogin',
+	data: function () {
+		return {
+			verifyCode: ''
+		}
+	},
+	methods: {
+		doBlogVerify: function () {
+			if (this.verifyCode != '') {
+				let opt = {
+					username: '',
+					verifyCode: this.verifyCode,
+					first: false
+				}
+				api.blogDoVerify(opt).then(({
+					data
+				}) => {
+					if (data.info == 200) {
+						alert('Login Successed.')
+						let userBlog = {
+							token: data.token,
+							username: data.username
+						}
+						store.dispatch('storeTokenBlog', JSON.stringify(userBlog))
+						//this.$router.push('/posts')
+						this.$router.go(0)
+					} else {
+						alert(data.message)
+					}
+				})
+			} else {
+				alert('Input verify code.')
+			}
+		}
+	}
+}	
+
+</script>
 
 <style>
 
-.login-wrapper {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 30px;
+.login-header > span {
+	color: black;
+	font-weight: bold;
+	font-size: 50px;
 }
 
 .login-wrapper > span {
@@ -44,10 +87,9 @@
 }
 
 .login-content {
-	display: flex;
-	margin-top: 50px;
-	flex-direction: column;
-	justify-content: center;
+	width: 100%;
+	height: 100%;
+	margin-top: 30px;
 }
 
 .login-content > form {
@@ -60,8 +102,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	width: 300px;
-	margin: 30px;
 	color: black;
 	background-color: rgb(135, 216, 205);
 }
@@ -69,17 +109,13 @@
 	color: white;
 }
 
-.form-control {
-}
 .form-control:focus {
 	border-color: rgb(135, 216, 205);
 	box-shadow: none;
 }
 
 .btn-login {
-	margin-top: 30px;
-	margin-bottom: 30px;
-	width: 300px;
+	margin: 5px 30px 15px 30px;
 	color: black;
 	font-weight: bold;
 	background-color: rgb(135, 216, 205);
