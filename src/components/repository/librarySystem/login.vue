@@ -84,8 +84,7 @@ export default {
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	height: 70%;
-	padding-top: 5%;
+	margin-top: 100px;
 }
 
 .input {

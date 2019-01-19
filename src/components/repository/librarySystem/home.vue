@@ -4,7 +4,7 @@
 
 	<div class="home">
 		<div class="head-home">
-			<span>HZNU Library's Information & Research Databases | 用于学术信息的收集和论文·报告的杭州师范大学大学图书馆网站</span>
+			<span>HZNU Library's Information & Research Databases</span><span v-if="isWid"> | </span><hr v-else/><span v-if="isWid">用于学术信息的收集和论文·报告的杭州师范大学大学图书馆网站</span><span v-else>收集和论文·报告的杭州师范大学大学图书馆网站</span>
 		</div>
 
 		<div class="ctn-home row">
@@ -101,6 +101,7 @@ export default {
 .home {
 	padding-top: 45px;
 	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 .ctn-home {
@@ -128,6 +129,7 @@ export default {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
+	margin-bottom: 20px;
 }
 
 .category-list, .category-field {
@@ -195,7 +197,7 @@ export default {
 	justify-content: center;
 	padding-left: 15%;
 	padding-right: 15%;
-	margin-top: 110px;
+	margin-top: 100px;
 }
 
 .foot-info, .foot-search, .foot-client {

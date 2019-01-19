@@ -78,6 +78,7 @@ export default {
 
 .login-content {
 	height: 100%;
+	width: 60%;
 	margin-top: 30px;
 	padding-right: 20px;
 }
@@ -85,6 +86,7 @@ export default {
 .login-content > form {
 	color: rgb(135, 216, 205);
 	background-color: black;
+	max-width: 300px;
 	background:linear-gradient(-45deg, transparent 15px, black 0);
 }
 
@@ -98,6 +100,7 @@ export default {
 .login-input:hover {
 	color: white;
 }
+
 
 .input-input {
 	margin-left: 15px;

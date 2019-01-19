@@ -23,7 +23,7 @@
 					<input type="password" class="form-control" placeholder="Password" v-model="password">
 				</div>
 
-				<button type="button" class=" btn btn-login" v-on:click="login()">Login</button>
+				<button type="button" class=" btn btn-login-ga" v-on:click="login()">Login</button>
 
 			</form>
 
@@ -46,7 +46,7 @@
 					<input type="password" class="form-control" placeholder="Repeat Password" v-model="vpassword">
 				</div>
 
-				<button type="button" class=" btn btn-login" v-on:click="register()">Register</button>
+				<button type="button" class=" btn btn-login-ga" v-on:click="register()">Register</button>
 			</form>
 		</div>
 	</div>
@@ -147,10 +147,10 @@ export default {
 </script>
 <style>
 
-img {
+/*img {
 	margin-right: 20px;
 	margin-left: 20px;
-}
+}*/
 
 img:hover {
 	cursor: pointer;
@@ -196,13 +196,13 @@ label > img {
 }
 
 .cnt-ga {
-	padding: 40px;
+	padding: 30px;
 	margin-top: 100px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	height: 500px;
+	/*height: 500px;*/
 }
 
 .nav-tabs > li > a {
@@ -225,19 +225,19 @@ label > img {
 	float: left;
 }
 
-.btn-login {
-	margin-top: 30px;
-	width: 300px;
+.btn-login-ga {
+	margin-top: 10px;
+	width: 200px;
 	color: #E5F5F5;
 	background-color: #0EA8A3;
 }
 
-.btn-login:hover {
+.btn-login-ga:hover {
 	color: white;
 	background-color: #0c8a86;
 }
 
-.btn-login:focus {
+.btn-login-ga:focus {
 	color: #E5F5F5;
 	background-color: #0EA8A3;
 }
@@ -270,23 +270,23 @@ label > img {
 	content: "Go Back";
 }
 
-.ft-ga {
+/*.ft-ga {
 	display: flex;
 	color: #2c3e50;
 	justify-content: flex-end;
 	bottom: 0px;
-}
+}*/
 
 /* Others */
 
-.login-ga > .ft-ga {
+/*.login-ga > .ft-ga {
 	position: fixed;
 	float: right;
 	left: 80%;
 	bottom: 3%;
-}
+}*/
 
-.git {
+/*.git {
 	color: #0EA8A3;
 	font-size: 16px;
 	line-height: 36px;
@@ -297,6 +297,6 @@ label > img {
 	color: #0c8a86;
 	cursor: pointer;
 	text-decoration: none;
-}
+}*/
 
 </style>

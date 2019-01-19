@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <template>
 <div id="Borrow_Message">
-  <div v-if="this.presentModule == 'borrow'">
+  <div class="ctn-success" v-if="this.presentModule == 'borrow'">
     <h2 class="username">姓名：李明</h2>
-    <h2 class="usernumber">卡号：2016210430020</h2>
+    <h2 class="usernumber">卡号：201621043</h2>
     <h2 class="tip">您已成功借阅以下书籍：</h2>
     <table border="1px solid black">
       <tbody>
@@ -31,9 +31,9 @@
     </table>
     <input type="button" value="返回首页" v-on:click="goTo('/library')">
   </div>
-  <div v-else-if="this.presentModule == 'return'">
+  <div class="ctn-success" v-else-if="this.presentModule == 'return'">
     <h2 class="username">姓名：李明</h2>
-    <h2 class="usernumber">卡号：2016210430020</h2>
+    <h2 class="usernumber">卡号：201621043</h2>
     <h2 class="tip">您已成功归还以下书籍：</h2>
     <table border="1px solid black">
       <tbody>
@@ -61,9 +61,9 @@
     </table>
     <input type="button" value="返回首页" v-on:click="goTo('/library')">
   </div>
-  <div v-else="this.presentModule == 'fine'">
+  <div class="ctn-success" v-else="this.presentModule == 'fine'">
     <h2 class="username">姓名：李明</h2>
-    <h2 class="usernumber">卡号：2016210430020</h2>
+    <h2 class="usernumber">卡号：201621043</h2>
     <h2 class="tip">您已成功偿还<a>9.00元</a>罚款</h2>
     <table border="1px solid black">
       <tbody>
@@ -114,12 +114,17 @@ export default {
 </script>
 
 <style>
+
+.ctn-success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #Borrow_Message {
   text-align: left;
-  position:relative;
-  left:12%;
-  width:70%;
-  margin:100px;
+  width:100%;
 }
 .username,.usernumber {
   display : inline;
@@ -128,9 +133,6 @@ export default {
   margin-left:1%;
 }
 #Borrow_Message input {
-  float:right;
-  position:relative;
-  right:13%;
   width: 100px;        
   line-height: 30px;
   margin-top:20px;
@@ -177,10 +179,7 @@ export default {
 }
 #Borrow_Message .tip
 {
-   float:left;
    font-size:25px;
-   padding-right:50%;
-   margin-left:1%;
 }
 
     </style>

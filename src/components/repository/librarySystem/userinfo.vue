@@ -44,7 +44,7 @@
 				<span class="userdata"> {{ this.userdata.max_borrow_time }}</span>
 			</div>
 		</div>
-		<button type="botton" class="btn btn-login" v-on:click="logout">登出</button>
+		<button type="botton" class="btn btn-login-lb" v-on:click="logout">登出</button>
 	</form>
 	
 	</div>
@@ -68,7 +68,7 @@
 						<input type="password" class="form-control" placeholder="Check the New Password" v-model="alter.checkPassword">
 					</div>
 				</div>
-				<button class="btn btn-login btn-doChange" v-on:click="submitChange()">提交</button>
+				<button class="btn btn-login-lb btn-doChange" v-on:click="submitChange()">提交</button>
 			</form>
 	</div>
 </div>
@@ -204,9 +204,11 @@ export default {
 	width: 50%;
 }
 
-.btn-login {
+.btn-login-lb {
 	margin-top: 20px;
 	background-color: #0EA8A3;
 	color: white;
+	max-width: 150px;
+	width: 100%;
 }
 </style>

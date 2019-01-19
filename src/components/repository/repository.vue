@@ -86,9 +86,6 @@ export default {
 }
 
 
-.fa-bann {
-	color: #446c66;
-}
 
 
 </style>

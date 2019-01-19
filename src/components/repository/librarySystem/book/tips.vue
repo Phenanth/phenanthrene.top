@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <template>
 <div class="tips">
-   <div v-if="this.presentModule == 'borrow'">
-   <hr/>
-	<h3>请您将需借的图书放入扫描区域</h3>
-	<h3>完成后点击下一步</h3>
-	<hr/>
-	<button type="button" v-on:click="goTo('/library')">返回首页</button>
-	<button type="button" v-on:click="goTo(nextPath)">下一步</button>
-	<div class="haorooms-dot "></div>
-    </div>
-	<div v-else-if="this.presentModule == 'return'">
-    <hr/>
-		<h3>请您将归还的图书放入扫描区域</h3>
-    <h3>完成后点击下一步</h3>
-     <hr/>
+	<div class="ctn-tips" v-if="this.presentModule == 'borrow'">
+		<hr/>
+		<h3>请您将需借的图书放入扫描区域</h3>
+		<h3>完成后点击下一步</h3>
+		<hr/>
 		<button type="button" v-on:click="goTo('/library')">返回首页</button>
-    <button type="button" v-on:click="goTo(nextPath)">下一步</button>
+		<button type="button" v-on:click="goTo(nextPath)">下一步</button>
+		<div class="haorooms-dot "></div>
 	</div>
-	<div v-else="this.presentModule == 'fine'">
-    <hr/>
+	<div class="ctn-tips" v-else-if="this.presentModule == 'return'">
+		<hr/>
+		<h3>请您将归还的图书放入扫描区域</h3>
+		<h3>完成后点击下一步</h3>
+		<hr/>
+		<button type="button" v-on:click="goTo('/library')">返回首页</button>
+		<button type="button" v-on:click="goTo(nextPath)">下一步</button>
+	</div>
+	<div class="ctn-tips" v-else="this.presentModule == 'fine'">
+		<hr/>
 		<h3>您所借的《西游记》已超期</h3>
-    <h3>请将已超期的图书归还后，才可借阅新的图书</h3>
-    <hr/>
-    <button type="button" v-on:click="goTo('/library')">返回首页</button>
+		<h3>请将已超期的图书归还后，才可借阅新的图书</h3>
+		<hr/>
+		<button type="button" v-on:click="goTo('/library')">返回首页</button>
 		<button type="button" v-on:click="goTo(nextPath)">下一步</button>
 	</div>
 </div>
@@ -69,12 +69,13 @@ export default {
     }
 }
 .tips{
-	position:relative;
-	top:1%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 500px;
 }
 .tips button {
-	position: relative;
-	left:270px;
 	width: 100px;
 	margin: 10px auto;
 	border:2px solid  #0EA8A3;
@@ -103,5 +104,9 @@ export default {
 	-webkit-animation-duration: 1s; /*动画持续时间*/
 	-webkit-animation-iteration-count: 1; /*动画次数*/
 	-webkit-animation-delay: 0s; /*延迟时间*/
+}
+
+.ctn-tips {
+	width: 70%;
 }
 </style>

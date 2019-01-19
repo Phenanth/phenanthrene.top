@@ -2,7 +2,7 @@
 <template>
 	<div class="post-wrapper">
 		<div class="post-header">
-			<span>{{ note }} posts</span>
+			<span>{{ note }} post</span>
 		</div>
 	</div>
 </template>

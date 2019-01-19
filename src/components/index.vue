@@ -257,5 +257,13 @@ div, .btn, .btn-hover {
 	background-color: black;
 
 }
+
+.fa-bann {
+	color: #446c66;
+}
+
+.fa-bann:hover {
+	color: #446c66;
+}
 </style>
 

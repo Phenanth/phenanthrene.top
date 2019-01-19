@@ -26,7 +26,7 @@
 			<div class="ga-hd-toggle-bar-option" v-on:click="goTo('/library/module/fine/tips')">罚款</div>
 		</div>
 
-		<button class="btn btn-default btn-goLogin col-md-1 col-xs-3 col-xs-offset-" v-on:click="goTo('/library/login')">登录</button>
+		<button class="btn btn-default btn-goLogin-lb col-md-1 col-xs-3" v-on:click="goTo('/library/login')">登录</button>
 
 	</div>
 
@@ -68,7 +68,7 @@ export default {
 }
 
 body::-webkit-scrollbar {
-    display:none
+    display:none;
 }
 
 .index, .home, .module {
@@ -140,14 +140,14 @@ body::-webkit-scrollbar {
 
 /* Login Button*/
 
-.btn-goLogin, .btn-goHome {
+.btn-goLogin-lb, .btn-goHome {
 	width: 80px;
 	background-color: #0EA8A3;
 	color: white;
 	border: none;
 }
 
-.btn-goLogin:hover, .btn-goHome:hover {
+.btn-goLogin-lb:hover, .btn-goHome:hover {
 	background-color: #0c8a86;
 	color: white;
 }

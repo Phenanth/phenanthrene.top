@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <template>
-<div class="container-fluid">
+<div class="">
 	<div class="jumbotron ga-jumbotron" id="jumbotron">
 		<h1>Features</h1>
 		<p>NodeJS  &emsp;VueJS &emsp;Axios &emsp;Vue-Router &emsp;Vuex</p>

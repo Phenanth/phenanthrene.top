@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <template>
-<div id="Borrow_Message">
-	<div v-if="this.presentModule == 'borrow'">
-		<h2 class="username">姓名：李明</h2>
-		<h2 class="usernumber">卡号：2016210430020</h2>
-		<h2 class="bookNum">可借阅数量：10本</h2>
+<div class="ensure" id="Borrow_Message">
+	<div class="ctn-ensure" v-if="this.presentModule == 'borrow'">
+		<h4 class="username">姓名：李明</h4>
+		<h4 class="usernumber">卡号：201621043</h4>
+		<h4 class="bookNum">可借阅数量：10本</h4>
+
 		<h2 class="tip">您所要借阅的图书为：</h2>
 		<table border="1px solid black">
 			<tbody>
@@ -30,13 +31,15 @@
 				</tr>
 			</tbody>
 		</table>
-		<input type="button" value="确认借阅" v-on:click="goTo(nextPath)">
-		<input type="button" value="返回首页" v-on:click="goTo('/library')">
-		<input type="button" value="重新选择" v-on:click="goTo(formerPath)">
+		<div class="ctl-buttons-lb">
+			<input type="button" value="确认借阅" v-on:click="goTo(nextPath)">
+			<input type="button" value="返回首页" v-on:click="goTo('/library')">
+			<input type="button" value="重新选择" v-on:click="goTo(formerPath)">
+		</div>
 	</div>
-	<div v-else-if="this.presentModule == 'return'">
+	<div class="ctn-ensure" v-else-if="this.presentModule == 'return'">
 		<h2 class="username">姓名：李明</h2>
-		<h2 class="usernumber">卡号：2016210430020</h2>
+		<h2 class="usernumber">卡号：201621043</h2>
 		<h2 class="tip">您所要归还的书籍为：</h2>
 		<table border="1px solid black">
 			<tbody>
@@ -62,12 +65,14 @@
 				</tr>
 			</tbody>
 		</table>
-		<input type="button" value="确认归还" v-on:click="goTo(nextPath)">
-		<input type="button" value="退出" v-on:click="goTo('/library')">
+		<div class="ctl-buttons-lb">
+			<input type="button" value="确认归还" v-on:click="goTo(nextPath)">
+			<input type="button" value="退出" v-on:click="goTo('/library')">
+		</div>
 	</div>
-	<div v-else="this.presentModule == 'fine'">
+	<div class="ctn-ensure" v-else="this.presentModule == 'fine'">
 		<h2 class="username">姓名：李明</h2>
-		<h2 class="usernumber">卡号：2016210430020</h2>
+		<h2 class="usernumber">卡号：201621043</h2>
 		<h2 class="tip" >您所需支付罚款的书籍：</h2>
 		<table border="1px solid black">
 			<tbody>
@@ -94,8 +99,10 @@
 			</tbody>
 		</table>
 		<h2 class="tip"  id="Fined_Total">您所需支付的金额为：<a>9.00</a>元</h2>
-		<input type="button" value="确认支付" v-on:click="goTo(nextPath)">
-		<input type="button" value="退出"  v-on:click="goTo('/library')">
+		<div class="ctl-buttons-lb">
+			<input type="button" value="确认支付" v-on:click="goTo(nextPath)">
+			<input type="button" value="退出"  v-on:click="goTo('/library')">
+		</div>
 	</div>
 </div>
 </template>
@@ -123,13 +130,26 @@ export default {
 }
 </script>
 <style>
-#Borrow_Message {
+
+.ensure {
+}
+
+.ctn-ensure {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+
+/* #Borrow_Message {
 	text-align: left;
 	position:relative;
 	left:12%;
 	width:70%;
 	margin:100px;
-}
+} */
 .username,.bookNum,.usernumber {
 	display : inline;
 	margin-right:40px;
@@ -137,10 +157,8 @@ export default {
 	margin-left:1%;
 }
 #Borrow_Message input {
-	position:relative;
-	float:right;
-	right:13%;
-	width: 100px;  
+	max-width: 100px;
+	width: 50%;
 	margin-top:20px;
 	margin-right:20px; 
 	border:2px solid  #0EA8A3;     
@@ -185,13 +203,19 @@ export default {
   width:25%;
 }
 #Borrow_Message .tip{
-   text-align: left;
-   font-size:25px;
-   margin-left:1%;
 }
 #Borrow_Message #Fined_Total {
    float:left;
    display:inline;
+}
+
+.ctl-buttons-lb {
+	display: flex;
+	justify-content: center;
+}
+
+.ctl-buttons-lb > input {
+	min-width: 80px;
 }
 
 </style>
