@@ -3,10 +3,11 @@
 <template>
 	<div class="info-wrapper container-fluid">
 		<div class="info-header">
-			<span>Info</span>
+			<span>Info.</span>
 		</div>
 		<div class="info-content">
-			<div class="btn btn-logout" v-on:click="doBlogLogout()">Logout</div>
+			<div class="info-text">Welcome, Phenanthrene.</div>
+			<div class="btn btn-logout" v-on:click="doBlogLogout()">Log out</div>
 		</div>
 
 		</div>
@@ -38,7 +39,7 @@ export default {
 .info-header > span {
 	color: black;
 	font-weight: bold;
-	font-size: 50px;
+	font-size: 40px;
 }
 
 .info-wrapper > span {
@@ -47,13 +48,21 @@ export default {
 }
 
 .info-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 	margin-top: 30px;
+}
+
+.info-text {
+	font-weight: bold;
 }
 
 .btn-logout {
 	color: rgb(135, 216, 205);
 	font-weight: bold;
 	background-color: black;
+	margin-top: 30px;
 }
 
 .btn-logout:hover {

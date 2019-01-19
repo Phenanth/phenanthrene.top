@@ -3,8 +3,8 @@
 
 <div class="home-ga">
 	<div class="hd-ga">
-		<img class="col-md-offset-2" height="35px" width="35px" src="../../../../static/svg/GALogin/onepage.svg" v-on:click="goTo('/GA-Login/home')"/>
-		<span class="header col-md-2" v-on:click="goTo('/GA-Login/home')">HOMEPAGE</span>
+		<img class="col-md-offset-2 col-xs-offset-1" height="30px" width="30px" src="../../../../static/svg/GALogin/onepage.svg" v-on:click="goTo('/GA-Login/home')"/>
+		<span class="header col-md-2 col-md-offset-2 col-xs-2 col-xs-offset-2" v-on:click="goTo('/GA-Login/home')">HOMEPAGE</span>
 		<div class="btn btn-goLogin col-md-offset-5" v-on:click="goTo('/GA-Login/login')">
 			<div class="fade-enter-active">
 				<img height="20px" width="35px" src="../../../../static/svg/GALogin/personal-center.svg"/>
@@ -37,7 +37,10 @@ export default {
 html, body {
 	margin: 0px;
 	overflow-x: hidden;
- 	background-color: white; 
+}
+
+#app {
+	background-color: white;
 }
 
 img {
@@ -146,7 +149,7 @@ h1 {
 }
 
 .jumbotron > p {
-	margin-top: 90px;
+	margin-top: 50px;
 	margin-bottom: 20px;
 }
 
@@ -179,7 +182,7 @@ h1 {
 .home-ga > .ft-ga {
 	position: fixed;
 	float: right;
-	left: 96%;
+	left: 85%;
 	bottom: 3%;
 }
 

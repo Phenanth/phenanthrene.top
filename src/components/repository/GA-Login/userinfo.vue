@@ -9,7 +9,7 @@
         <div class="info-details"><b>sex&nbsp; &nbsp;|&nbsp; &nbsp;</b> {{ userdata.user_sex }}</div>
         <div v-if="isVerified">
           <span class="label label-info">验证密钥</span>
-          <div>{{ userdata.user_secret }}</div>
+          <div id="ga-user-secret">{{ userdata.user_secret }}</div>
         </div>
       </div>
       
@@ -235,7 +235,9 @@ export default{
 .info-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top:30px;
 }
 .info-details {
@@ -244,7 +246,12 @@ export default{
 .info-text b {
    font-weight:bold;
 }
- .btn-default {
+
+#ga-user-secret {
+  font-size: 14px;
+}
+
+.btn-default {
   background-color: white ;
   color:#0EA8A3;
   border:2px solid #0EA8A3;

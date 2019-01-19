@@ -4,11 +4,11 @@
 
 	<div class="home">
 		<div class="head-home">
-			<span>Hang Zhou normal university library's Information & Research Databases | 用于学术信息的收集和论文·报告的杭州师范大学大学图书馆网站</span>
+			<span>HZNU Library's Information & Research Databases | 用于学术信息的收集和论文·报告的杭州师范大学大学图书馆网站</span>
 		</div>
 
-		<div class="ctn-home">
-			<div class="category">
+		<div class="ctn-home row">
+			<div class="category col-md-8 col-xs-12">
 				<div class="category-head">
 					<img height="30px" width="35px" src="⁨../../../../static/svg/library/right.svg">
 					<span>学术信息数据库</span>
@@ -40,13 +40,13 @@
 					<div class="category-field-box"><h5>其他(40)</h5></div>
 				</div>
 			</div>
-			<div class="info">
+			<div class="info col-md-4 col-xs-12">
 				<div class="info-head">
 					<img height="30px" width="35px" src="⁨../../../../static/svg/library/left.svg">
 					通知
 				</div>
-				<div class="info-list">
-					<div class="info-list-box"><h5>关于2019年元旦图书馆开放安排的通知</h5></div>
+				<div class="info-list col-xs-12">
+					<div class="info-list-box col-xs-12"><h5>关于2019年元旦图书馆开放安排的通知</h5></div>
 					<div class="info-list-box"><h5>退笔成山未足珍，读书万卷始通神——CASHL管理学资源优惠活动开始了</h5></div>
 					<div class="info-list-box"><h5>12 / 29 两条校图书馆临时休馆的通知</h5></div>
 					<div class="info-list-box"><h5>12月图书馆规划展示相关的通知</h5></div>
@@ -54,19 +54,19 @@
 			</div>
 		</div>
 
-		<div class="foot">
-			<div class="foot-info">
+		<div class="ga-foot">
+			<div class="foot-info col-md-6 col-xs-12">
 				<h2>HZNU | 图书馆</h2>
 				<span>>>>> 这里会有一个LOGO和学校名字</span>
 				<span>©2018 HangZhou Normal UNIVERSITY LIBRARY All Rights Reserved.</span>
 			</div>
-			<div class="foot-search">
+			<div class="foot-search col-md-3" v-if="isWid">
 				<span><b>情报检索</b></span>
 				<span>轻松检索</span>
 				<span>藏书检索</span>
 				<span>学术信息数据库</span>
 			</div>
-			<div class="foot-client">
+			<div class="foot-client col-md-3" v-if="isWid">
 				<span><b>客户服务</b></span>
 				<span>文献管理</span>
 				<span>远程访问服务</span>
@@ -83,6 +83,15 @@ export default {
 		goTo: function (path) {
 			this.$router.push(path)
 		}
+	},
+	computed: {
+		isWid: function () {
+			if (document.body.clientWidth < 992) {
+				return false
+			} else {
+				return true
+			}
+		}
 	}
 }
 </script>
@@ -90,16 +99,12 @@ export default {
 <style>
 
 .home {
-	margin-top: 45px;
+	padding-top: 45px;
+	overflow-x: hidden;
 }
 
 .ctn-home {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	width: 80%;
-	height: calc(100% - 40px * 2);
+	height: 100%;
 	margin-top: 30px;
 	margin-left: 10%;
 	margin-right: 10%;
@@ -123,10 +128,6 @@ export default {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-}
-
-.category {
-	width: 60%;
 }
 
 .category-list, .category-field {
@@ -170,8 +171,9 @@ export default {
 
 .info-list-box {
 	background-color: white;
-	width: 300px;
 	text-align: left;
+	padding: 10px;
+	width: 100%;
 	border-bottom: 1px solid grey;
 }
 
@@ -184,7 +186,7 @@ export default {
 
 /* Footer */
 
-.foot {
+.ga-foot {
 	bottom: 0px;
 	height: 150px;
 	width: 100%;
@@ -193,6 +195,7 @@ export default {
 	justify-content: center;
 	padding-left: 15%;
 	padding-right: 15%;
+	margin-top: 110px;
 }
 
 .foot-info, .foot-search, .foot-client {

@@ -6,20 +6,11 @@
 			<span>Login</span>
 		</div>
 		<div class="login-content">
-			<form class="col-md-3 col-sm-3">
+			<form>
 				<div class="input-input form-group">
 					<label>Login Code</label>
 					<input id="verifyText" type="text" class="form-control" v-model="verifyCode" placeholder="Input login code (Google Authenticator)">
 				</div>
-				<!-- <div class="login-input form-group">
-					<label for="input-user"><i class="fa fa-user fa-lg" aira-hiddin="ture"></i></label>
-					
-					<input class="form-control" name="first" type="text">
-				</div>
-				<div class="login-input form-group">
-					<label for="input-pw"><i class="fa fa-unlock fa-lg" aira-hiddin="ture"></i></label>
-					<input class="form-control" name="first" type="password">
-				</div> -->
 				<button type="button" class="btn btn-login" v-on:click="doBlogVerify()">Verify Identity</button>
 			</form>
 		</div>
@@ -51,7 +42,6 @@ export default {
 					data
 				}) => {
 					if (data.info == 200) {
-						alert('Login Successed.')
 						let userBlog = {
 							token: data.token,
 							username: data.username
@@ -77,7 +67,7 @@ export default {
 .login-header > span {
 	color: black;
 	font-weight: bold;
-	font-size: 50px;
+	font-size: 40px;
 }
 
 .login-wrapper > span {
@@ -87,9 +77,9 @@ export default {
 }
 
 .login-content {
-	width: 100%;
 	height: 100%;
 	margin-top: 30px;
+	padding-right: 20px;
 }
 
 .login-content > form {
@@ -107,6 +97,11 @@ export default {
 }
 .login-input:hover {
 	color: white;
+}
+
+.input-input {
+	margin-left: 15px;
+	margin-right: 15px;
 }
 
 .form-control:focus {

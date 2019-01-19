@@ -2,9 +2,7 @@
 <template>
 	<div class="post-wrapper">
 		<div class="post-header">
-			<i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" v-on:click="goTo('/posts')"></i>
-			<span>Post of {{ note }}</span>
-			
+			<span>{{ note }} posts</span>
 		</div>
 	</div>
 </template>
@@ -14,7 +12,6 @@ export default {
 	name: 'post',
 	data: function () {
 		return {
-			note: 'SCL (default)'
 		}
 	},
 	methods: {
@@ -23,14 +20,20 @@ export default {
 		}
 	},
 	mounted: function () {
-
+	},
+	computed: {
+		note: function () {
+			let path = this.$route.path
+			let reg = /\/post-item(.?)/g;
+			reg.test(path);
+			return RegExp.rightContext
+		}
 	}
 }
 </script>
 <style>
 
 .post-wrapper {
-	margin-top: 40px;
 	margin-left: 120px;
 }
 
@@ -39,6 +42,7 @@ export default {
 
 }
 .post-header > span {
-	font-size: 50px;
+	font-size: 40px;
+	font-weight: bold;
 }
 </style>

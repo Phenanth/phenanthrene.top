@@ -23,7 +23,7 @@
 			</div>
 
 			<div class="about-content">
-				<i class="fab fa-git fa-lg"></i>
+				<i class="fa fa-git" aria-hidden="true"></i>
 				<div>
 					<p class="about-underline">Also, click the 'git' icon to see my github page.</p>
 				</div>
@@ -46,7 +46,7 @@
 .about-header {
 	color: black;
 	font-weight: bold;
-	font-size: 50px;
+	font-size: 40px;
 }
 
 .about-contents {
@@ -55,6 +55,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	font-weight: bold;
+	max-width: 55%;
 }
 .about-content {
 	display: flex;
@@ -62,8 +63,7 @@
 	flex-direction: row;
 	justify-content: center;
 	color: rgb(135, 216, 205);
-	min-height: 80px;
-	padding: 10px;
+	padding: 10px 10px 0px 10px;
 	background: black; 
 	background:linear-gradient(-45deg, transparent 15px, black 0);
 

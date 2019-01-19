@@ -6,13 +6,13 @@
 
 	<div class="hd">
 		
-		<div class="web-header row col-md-3 col-md-offset-1" v-on:click="goTo('/library')">
-			<img class="col-md-2" height="30px" width="35px" src="../../../../static/svg/library/library.svg"/>
-			<span>杭州师范大学图书馆</span>
+		<div class="web-header row col-md-3 col-md-offset-1 col-xs-2" v-on:click="goTo('/library')">
+			<img class="col-md-offset-2" height="30px" width="35px" src="../../../../static/svg/library/library.svg"/>
+			<span class="col-md-offset-1" v-if="isWid">HZNU图书馆</span>
 		</div>
 
-		  <div class="col-md-2 col-md-offset-5">
-		    <div class="input-group">
+		  <div class="col-md-2 col-md-offset-5 col-xs-5">
+		    <div class="input-group col-xs-12 col-md-12">
 		      <input type="text" class="form-control" placeholder="图书名 / 作者名 / 分类">
 		      <span class="input-group-btn">
 		        <button class="btn btn-default" type="button" v-on:click="goTo('/library/search')">搜索</button>
@@ -20,13 +20,13 @@
 		    </div>
 		  </div>
 		
-		<div class="header-option hd-toggle-bar">图书管理 <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-			<div class="hd-toggle-bar-option" v-on:click="goTo('/library/module/borrow/tips')">借书</div>
-			<div class="hd-toggle-bar-option" v-on:click="goTo('/library/module/return/tips')">还书</div>
-			<div class="hd-toggle-bar-option" v-on:click="goTo('/library/module/fine/tips')">罚款</div>
+		<div class="ga-header-option ga-hd-toggle-bar">图书管理 <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+			<div class="ga-hd-toggle-bar-option" v-on:click="goTo('/library/module/borrow/tips')">借书</div>
+			<div class="ga-hd-toggle-bar-option" v-on:click="goTo('/library/module/return/tips')">还书</div>
+			<div class="ga-hd-toggle-bar-option" v-on:click="goTo('/library/module/fine/tips')">罚款</div>
 		</div>
 
-		<button class="btn btn-default btn-goLogin col-md-1" v-on:click="goTo('/library/login')">登录</button>
+		<button class="btn btn-default btn-goLogin col-md-1 col-xs-3 col-xs-offset-" v-on:click="goTo('/library/login')">登录</button>
 
 	</div>
 
@@ -48,16 +48,27 @@ export default {
 			this.$router.push(path)
 			this.$router.go(0)
 		}
+	},
+	computed: {
+		isWid: function () {
+			if (document.body.clientWidth < 992) {
+				return false
+			} else {
+				return true
+			}
+		}
 	}
 }
 </script>
 
 <style>
-	
-html, body {
-	overflow-x: hidden;
- 	height: 100%;
- 	width: 100%;
+
+#app {
+	background-color: white;
+}
+
+body::-webkit-scrollbar {
+    display:none
 }
 
 .index, .home, .module {
@@ -96,7 +107,7 @@ html, body {
 
 /* Toggle Bar */
 
-.header-option {
+.ga-header-option {
 	height: 40px;
 	width: 100px;
 	display: flex;
@@ -105,28 +116,25 @@ html, body {
 	color: white;
 }
 
-.hd-toggle-bar {
+.ga-hd-toggle-bar {
 	position: relative; /* 作用：保持鼠标下移下拉菜单依然出现 */
 	display: inline-block;
 	line-height: 40px;
 	text-align: center;
 }
 
-.hd-toggle-bar-option {
+.ga-hd-toggle-bar-option {
 	display: none;
 	background-color: #0EA8A3;
 	color: white;
 }
 
-.hd-toggle-bar-option:hover {
+.ga-hd-toggle-bar-option:hover {
 	background-color: #0c8a86;
 }
 
-.hd-toggle-bar:hover {
-	background-color: #0c8a86;
-}
 
-.hd-toggle-bar:hover > .hd-toggle-bar-option {
+.ga-hd-toggle-bar:hover > .ga-hd-toggle-bar-option {
 	display: block;
 }
 
@@ -147,7 +155,7 @@ html, body {
 .ft-library {
 	position: fixed;
 	float: right;
-	left: 96%;
+	left: 85%;
 	bottom: 3%;
 }
 

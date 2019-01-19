@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 <template>
-<div>
-	<div class="jumbotron" id="jumbotron">
+<div class="container-fluid">
+	<div class="jumbotron ga-jumbotron" id="jumbotron">
 		<h1>Features</h1>
 		<p>NodeJS  &emsp;VueJS &emsp;Axios &emsp;Vue-Router &emsp;Vuex</p>
 		<a class="btn btn-primary" href="/#features" role="button">Learn more</a>
@@ -12,12 +12,12 @@
 			<h2>NODEJS  &nbsp;and  &nbsp;VUEJS</h2>
 			<div class="row">
 				<div class="col-xs-6 col-md-5" id="NodeJS_Img">
-					<a class="thumbnail" href="https://nodejs.org/en/" target="_blank">
+					<a class="thumbnail ga-thumbnail" href="https://nodejs.org/en/" target="_blank">
 						<img src="../../../assets/GALogin/NodeJS.png" alt="">
 					</a>
 				</div>
 				<div class="col-xs-6 col-md-5">
-					<a class="thumbnail" href="https://cn.vuejs.org/" target="_blank">
+					<a class="thumbnail ga-thumbnail" href="https://cn.vuejs.org/" target="_blank">
 						<img src="../../../assets/GALogin/logo.png" alt="">
 					</a>
 				</div>
@@ -61,3 +61,12 @@
 	</div>
 </div>
 </template>
+
+<style>
+	
+.ga-jumbotron {
+	margin-top: 40px;
+}
+
+
+</style>

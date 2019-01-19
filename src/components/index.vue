@@ -9,16 +9,16 @@
 				<div class="nav-option" v-on:click="goTo('/repository')" v-bind:class="{ active : isRouteRepository }">Repository</div>
 				<div class="nav-option" v-on:click="goTo('/about')" v-bind:class="{ active : isRouteAbout }">About</div>
 			</div>
-			<div class="nav-square" onclick="window.open('https://github.com/Phenanth')"><i class="fab fa-git fa-lg"></i></div>
+			<div class="nav-square" onclick="window.open('https://github.com/Phenanth')"><i class="fa fa-git fa-lg" aria-hidden="true"></i></div>
 		</div>
 		<div class="index-right">
 			<div class="index-header">
 				<div class="header-options">
 					<div class="header-option" v-on:click="goTo('/logAdmin')" v-bind:class="{ active : isRouteAdmin }">Admin</div>
-					<div class="header-option hd-toggle-bar">Lang <i class="fa fa-arrow-circle-down" aria-hidden="true"></i> 
+					<div class="header-option hd-toggle-bar">Lang <i class="fa fa-chevron-down" aria-hidden="true"></i> 
 						<div class="hd-toggle-bar-option">English</div>
-						<div class="hd-toggle-bar-option">Chinese</div>
-						<div class="hd-toggle-bar-option">Japanese</div>
+						<div class="hd-toggle-bar-option fa-bann">Chinese</div>
+						<div class="hd-toggle-bar-option fa-bann">Japanese</div>
 					</div>
 				</div>
 			</div>
@@ -85,6 +85,10 @@ export default {
 
 <style>
 
+#app {
+	background-color: rgb(135, 216, 205);
+}
+
 div, .btn, .btn-hover {
 	transition: color .4s;
 	-moz-transition: color .4s;	/* Firefox 4 */
@@ -105,20 +109,20 @@ div, .btn, .btn-hover {
 	flex-direction: row;
 }
 
-.home-wrapper, .reposi-wrapper, .about-wrapper, .login-wrapper, .info-wrapper {
+.home-wrapper, .reposi-wrapper, .about-wrapper, .login-wrapper, .info-wrapper, .post-wrapper {
 	width: 100%;
-	height: 100%;
-	margin-left: 120px;
-	margin-top: 40px;
+	/*height: 100%;*/
+	margin: 20px 0px 10px 120px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
-	padding: 30px;
+	padding: 30px 0px 50px 1%;
 }
 
 .index-nav {
-	width: 120px;
+	min-width: 100px;
+	width: 8%;
 	height: 100vh;
 	display: flex;
 	position: fixed;
@@ -173,7 +177,7 @@ div, .btn, .btn-hover {
 
 
 .index-right {
-	width: calc(100% - 120px);
+	width: 100%;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -185,7 +189,8 @@ div, .btn, .btn-hover {
 	position: fixed;
 	top: 0px;
 	right: 0px;
-	width: calc(100vw - 120px);
+	width: 92%;
+	max-width: calc(100vw - 100px);
 	z-index: 100;
 	background-color: black;
 }
@@ -235,7 +240,8 @@ div, .btn, .btn-hover {
 
 
 .index-content {
-	height: calc(100% - 80px);
+	width: 100%;
+	height: 100%;
 	background-color: rgb(135, 216, 205);
 }
 
@@ -245,8 +251,8 @@ div, .btn, .btn-hover {
 	position: fixed;
 	bottom: 0px;
 	right: 0px;
-	width: calc(100% - 120px);
-
+	width: 92%;
+	max-width: calc(100vw - 100px);
 	z-index: 100;
 	background-color: black;
 

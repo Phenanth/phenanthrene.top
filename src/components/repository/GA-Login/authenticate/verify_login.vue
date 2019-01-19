@@ -76,4 +76,18 @@ export default {
 	display: flex;
 	justify-content: space-between;
 }
+
+.btn-default {
+  background-color: white ;
+  color:#0EA8A3;
+  border:2px solid #0EA8A3;
+  font-weight:bold;
+}
+.btn-default:hover {
+  background-color: white;
+  color:#0c8a86;
+  border:2px solid #0c8a86;
+  font-weight:bold;
+  cursor:pointer;
+}
 </style>

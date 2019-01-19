@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <template>
-	<div class="login-ga container-fluid">
-
+	<div class="login-ga">
 
 		<div class="cnt-ga">
 
@@ -161,15 +160,6 @@ h1 {
 	display: inline-block;
 }
 
-
-.login-ga {
-	display: flex;
-	flex-direction: column;
-	width: 70%;
-	color: #505050;
-	height: 100%;
-}
-
 .btn-primary {
 	width: 170px;
 	height: 40px;
@@ -183,12 +173,6 @@ h1 {
 	background-color: #0c8a86;
 }
 
-html, body {
-	min-width: 992px;
-	margin: 0px;
-	background-color: white;
-}
-
 input[type="radio"], input[type="checkbox"] {
 	display: none;
 }
@@ -200,7 +184,6 @@ label > img {
 .login-ga {
 	display: flex;
 	flex-direction: column;
-	width: 60%;
 	color: #505050;
 	height: 100%;
 }

@@ -20,6 +20,8 @@ export default {
 </script>
 
 <style>
-
-
+.module {
+	height: 100%;
+	margin-top: 45px;
+}
 </style>
